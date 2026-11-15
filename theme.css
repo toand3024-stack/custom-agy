@@ -1,0 +1,541 @@
+/* Antigravity Custom Background & White/Light Frosted Glass Theme */
+
+html,
+body,
+#root {
+  --body-background: transparent !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -10 !important;
+  pointer-events: none !important;
+  background-color: #F8FAFC;
+  background-image: var(--agy-bg-image) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: var(--agy-bg-opacity, 1) !important;
+  filter: brightness(var(--agy-bg-brightness, 1.0)) contrast(var(--agy-bg-contrast, 1.02)) blur(var(--agy-bg-blur, 0px)) !important;
+  transform: scale(1.01);
+}
+
+:root,
+body,
+body.dark,
+body[data-agy-theme],
+body[data-newux-theme],
+body[data-newux-theme="onyx"] {
+  --background: transparent !important;
+  --foreground: #0F172A !important;
+  --secondary-foreground: #1E293B !important;
+  --muted-foreground: #334155 !important;
+  --placeholder: rgba(51, 65, 85, 0.72) !important;
+  --shell: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  --shell-canvas: transparent !important;
+  --sidebar: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  --sidebar-secondary: rgba(15, 23, 42, 0.08) !important;
+  --sidebar-muted: rgba(15, 23, 42, 0.05) !important;
+  --home-glow: transparent !important;
+  --card: rgba(255, 255, 255, 0.82) !important;
+  --card-border: rgba(15, 23, 42, 0.14) !important;
+  --card-edge: rgba(15, 23, 42, 0.10) !important;
+  --border: rgba(15, 23, 42, 0.12) !important;
+  --secondary: rgba(15, 23, 42, 0.07) !important;
+  --muted: rgba(241, 245, 249, 0.86) !important;
+  --glass: rgba(255, 255, 255, 0.82) !important;
+  --glass-border: rgba(15, 23, 42, 0.14) !important;
+  --glass-highlight: rgba(255, 255, 255, 0.92) !important;
+  --onyx-frame: rgba(255, 255, 255, 0.55) !important;
+  --onyx-raised: rgba(255, 255, 255, var(--agy-composer-alpha, 0.88)) !important;
+  --onyx-well: rgba(241, 245, 249, 0.78) !important;
+  --onyx-selected: rgba(15, 23, 42, 0.09) !important;
+  --onyx-key: #FFFFFF !important;
+  --code-foreground: #0369A1 !important;
+  --link: #0284C7 !important;
+
+  --color-background: transparent !important;
+  --color-foreground: #0F172A !important;
+  --color-secondary-foreground: #1E293B !important;
+  --color-muted-foreground: #334155 !important;
+  --color-placeholder: rgba(51, 65, 85, 0.72) !important;
+  --color-shell: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  --color-sidebar: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  --color-card: rgba(255, 255, 255, 0.82) !important;
+  --color-card-border: rgba(15, 23, 42, 0.14) !important;
+  --color-border: rgba(15, 23, 42, 0.12) !important;
+  --color-secondary: rgba(15, 23, 42, 0.07) !important;
+  --color-muted: rgba(241, 245, 249, 0.86) !important;
+  --color-glass: rgba(255, 255, 255, 0.82) !important;
+  --color-glass-border: rgba(15, 23, 42, 0.14) !important;
+  --color-code: #0369A1 !important;
+  --color-link: #0284C7 !important;
+  color: #0F172A !important;
+}
+
+body[data-has-browser-hole="true"]::before {
+  display: none !important;
+}
+
+body[data-has-browser-hole="true"] {
+  --shell-canvas: #F8FAFC !important;
+  --shell: #F8FAFC !important;
+  --sidebar: #F8FAFC !important;
+}
+
+/* Transparent main canvas and shell containers */
+.agy-shell,
+.agy-inset-shell,
+.agy-sheet,
+.agy-sheet[data-sheet-inset],
+[data-main-content-header],
+[data-main-content-header] > *,
+[data-main-content-body],
+[data-tiling-pane],
+.agy-home {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.agy-sheet[data-sheet-inset] [data-main-content-body] {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.agy-sheet[data-sheet-inset] [data-main-content-body]::after,
+.agy-sheet[data-sheet-inset] [data-main-content-body]::before,
+[data-split-panes] .agy-sheet[data-sheet-inset] [data-tiling-pane]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Top Menu Bar & Left Sidebar — Adaptive Frosted Glass + Crisp Typography */
+[data-testid="title-menu-bar"] {
+  background-color: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  backdrop-filter: blur(12px) saturate(1.3);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  border-bottom: 1px solid var(--agy-sidebar-border, rgba(15, 23, 42, 0.08));
+}
+
+[data-testid="title-menu-bar"],
+[data-testid="title-menu-bar"] button,
+[data-testid="title-menu-bar"] span,
+[data-testid="title-menu-bar"] a,
+[data-testid="title-menu-bar"] svg {
+  color: var(--agy-sidebar-fg, #0F172A) !important;
+  text-shadow: var(--agy-sidebar-shadow, 0 1px 2px rgba(255, 255, 255, 0.95));
+}
+
+[data-testid="sidebar-split"] > :first-child {
+  background-color: var(--agy-sidebar-bg, rgba(255, 255, 255, var(--agy-sidebar-alpha, 0.62))) !important;
+  backdrop-filter: blur(12px) saturate(1.3);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  border-right: 1px solid var(--agy-sidebar-border, rgba(15, 23, 42, 0.08));
+}
+
+[data-testid="sidebar-split"] > :first-child,
+[data-testid="sidebar-split"] > :first-child a,
+[data-testid="sidebar-split"] > :first-child button,
+[data-testid="sidebar-split"] > :first-child svg,
+[data-testid="sidebar-split"] > :first-child span:not([class*="text-green"]):not([class*="text-amber"]):not([class*="text-red"]) {
+  color: var(--agy-sidebar-fg, #0F172A) !important;
+  text-shadow: var(--agy-sidebar-shadow, 0 1px 2px rgba(255, 255, 255, 0.95));
+}
+
+[data-testid="sidebar-split"] > :first-child .opacity-50,
+[data-testid="sidebar-split"] > :first-child .text-muted-foreground {
+  color: var(--agy-sidebar-muted-fg, #334155) !important;
+  opacity: 1 !important;
+}
+
+[data-testid="sidebar-split"] > :first-child .bg-sidebar {
+  background-color: transparent !important;
+}
+
+.agy-sidebar-row .agy-row-actions,
+.agy-sidebar-row .agy-row-actions::before,
+[data-testid="conversation-row-history"] .agy-row-actions,
+[data-testid="conversation-row-history"] .agy-row-actions::before {
+  background: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* Frosted pill styling for + New Conversation and selected sidebar rows */
+[data-testid="sidebar-split"] > :first-child a[href="/"],
+[data-testid="sidebar-split"] > :first-child button:has([data-testid="new-conversation-icon"]),
+body[data-agy-theme][data-newux-theme="onyx"] .agy-sidebar-row[data-selected="true"],
+.agy-sidebar-row[data-selected="true"] {
+  background-color: var(--agy-sidebar-pill-bg, rgba(255, 255, 255, 0.82)) !important;
+  --row-bg: var(--agy-sidebar-pill-bg, rgba(255, 255, 255, 0.82)) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--agy-sidebar-border, rgba(15, 23, 42, 0.12)) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08) !important;
+  color: var(--agy-sidebar-fg, #0F172A) !important;
+}
+
+.agy-sidebar-row:hover {
+  background-color: var(--agy-sidebar-pill-bg, rgba(255, 255, 255, 0.56)) !important;
+}
+
+/* [AGY-AUTO-CONTRAST-START] */
+/* auto-detected tone: dark (lum=107.6) -> bright white text & dark glass */
+:root, body {
+  --agy-home-fg: #FFFFFF !important;
+  --agy-home-shadow: 0 2px 14px rgba(0, 0, 0, 0.92), 0 1px 4px rgba(0, 0, 0, 0.98) !important;
+  --agy-header-fg: #FFFFFF !important;
+  --agy-header-shadow: 0 1px 6px rgba(0, 0, 0, 0.92) !important;
+  --agy-canvas-fg: #F8FAFC !important;
+  --agy-canvas-shadow: 0 1px 6px rgba(0, 0, 0, 0.92), 0 0 2px rgba(0, 0, 0, 0.98) !important;
+  --agy-pill-bg: rgba(12, 16, 28, 0.72) !important;
+  --agy-pill-border: rgba(255, 255, 255, 0.20) !important;
+  --agy-sidebar-bg: rgba(12, 16, 28, var(--agy-sidebar-alpha, 0.56)) !important;
+  --agy-sidebar-fg: #F8FAFC !important;
+  --agy-sidebar-muted-fg: #CBD5E1 !important;
+  --agy-sidebar-shadow: 0 1px 4px rgba(0, 0, 0, 0.90) !important;
+  --agy-sidebar-pill-bg: rgba(255, 255, 255, 0.16) !important;
+  --agy-sidebar-border: rgba(255, 255, 255, 0.14) !important;
+}
+/* [AGY-AUTO-CONTRAST-END] */
+
+/* Kill top-right fade box (right-cluster-fade & bg-background) and keep top clusters crisp */
+[data-testid="right-cluster-fade"],
+[data-testid="pane-titlebar-toolbar"] > div[aria-hidden="true"] {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+div.absolute.left-0.top-0.z-50,
+div.absolute.right-0.z-50,
+div.absolute.right-0.z-50 > div,
+[data-testid="pane-titlebar-toolbar"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+[data-main-content-header],
+[data-main-content-header] :is(button, span, a, svg, [data-testid="plugin-view-title-bar-title"]),
+[data-testid="pane-titlebar-toolbar"],
+[data-testid="pane-titlebar-toolbar"] :is(button, span, a, svg),
+div.absolute.left-0.top-0.z-50,
+div.absolute.left-0.top-0.z-50 :is(button, span, a, svg),
+div.absolute.right-0.z-50,
+div.absolute.right-0.z-50 :is(button, span, a, svg) {
+  color: var(--agy-header-fg, #FFFFFF) !important;
+  text-shadow: var(--agy-header-shadow, 0 1px 6px rgba(0, 0, 0, 0.92)) !important;
+}
+
+/* Home Greeting — Exclude .surface-composer so prompt box typography stays dark slate */
+.agy-home,
+.agy-home :is(h1, h2, h3, p, span, button):not(.surface-composer):not(.surface-composer *) {
+  color: var(--agy-home-fg, #FFFFFF) !important;
+  text-shadow: var(--agy-home-shadow, 0 2px 14px rgba(0, 0, 0, 0.92), 0 1px 4px rgba(0, 0, 0, 0.98)) !important;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* Composer / Prompt Input Box — Always Clean White Frosted Glass + Sharp Dark Text */
+body[data-agy-theme] .surface-composer,
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer,
+body[data-agy-theme][data-newux-theme="onyx"].dark .surface-composer,
+.surface-composer {
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  border: 1px solid rgba(15, 23, 42, 0.16) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+  padding: 4px !important;
+}
+
+body[data-agy-theme] .surface-composer > .surface-composer-card,
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer > .surface-composer-card,
+body[data-agy-theme][data-newux-theme="onyx"].dark .surface-composer > .surface-composer-card,
+body[data-agy-theme][data-newux-theme="onyx"] .surface-composer:focus-within > .surface-composer-card,
+body[data-agy-theme][data-newux-theme="onyx"].dark .surface-composer:focus-within > .surface-composer-card,
+.surface-composer > .surface-composer-card {
+  background-color: rgba(255, 255, 255, var(--agy-composer-alpha, 0.94)) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: blur(18px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.4) !important;
+  color: #0F172A !important;
+}
+
+#antigravity\.agentSidePanelInputBox.surface-composer,
+.surface-composer,
+#antigravity\.agentSidePanelInputBox.surface-composer :is(span, p, div, label, svg, textarea, input, [contenteditable="true"], [data-lexical-editor="true"], [data-lexical-editor="true"] *):not(.bg-foreground):not(.bg-foreground *):not(.bg-primary):not(.bg-primary *),
+.surface-composer :is(span, p, div, label, svg, textarea, input, [contenteditable="true"], [data-lexical-editor="true"], [data-lexical-editor="true"] *):not(.bg-foreground):not(.bg-foreground *):not(.bg-primary):not(.bg-primary *),
+#antigravity\.agentSidePanelInputBox.surface-composer button:not(.bg-foreground):not(.bg-primary),
+#antigravity\.agentSidePanelInputBox.surface-composer button:not(.bg-foreground):not(.bg-primary) *,
+.surface-composer button:not(.bg-foreground):not(.bg-primary),
+.surface-composer button:not(.bg-foreground):not(.bg-primary) * {
+  color: #0F172A !important;
+  caret-color: #0284C7 !important;
+  text-shadow: none !important;
+}
+
+#antigravity\.agentSidePanelInputBox.surface-composer button:is(.bg-foreground, .bg-primary),
+#antigravity\.agentSidePanelInputBox.surface-composer button:is(.bg-foreground, .bg-primary) *,
+.surface-composer button:is(.bg-foreground, .bg-primary),
+.surface-composer button:is(.bg-foreground, .bg-primary) * {
+  color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+
+#antigravity\.agentSidePanelInputBox.surface-composer :is(.pointer-events-none, [data-placeholder], .text-placeholder, .text-muted-foreground, .text-secondary-foreground),
+.surface-composer :is(.pointer-events-none, [data-placeholder], .text-placeholder, .text-muted-foreground, .text-secondary-foreground) {
+  color: #475569 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.surface-composer textarea::placeholder,
+.surface-composer input::placeholder {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"],
+[data-slot="toggle-group"] {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body[data-agy-theme][data-newux-theme="onyx"] [data-slot="toggle-group"] > button[data-pressed],
+[data-slot="toggle-group"] > button[data-pressed] {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12) !important;
+}
+
+body[data-agy-theme][data-newux-theme] .agy-user-bubble,
+.agy-user-bubble {
+  background-color: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  color: #0F172A !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06) !important;
+  text-shadow: none !important;
+}
+
+.agy-user-bubble * {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-main-content-body] {
+  color: var(--agy-canvas-fg, #0F172A) !important;
+}
+
+/* Assistant Markdown Prose — White Frosted Glass Card with Crisp Dark Slate Typography */
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) {
+  background-color: rgba(255, 255, 255, 0.80) !important;
+  backdrop-filter: blur(16px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.4) !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) h1,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) h2,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) h3,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) h4,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) strong,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) b,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) th {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) p,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) li,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) td,
+[data-main-content-body] [data-markdown-root]:not(.agy-user-bubble [data-markdown-root]) blockquote {
+  color: #1E293B !important;
+  text-shadow: none !important;
+}
+
+[data-main-content-body] [data-markdown-root] a:not(.inline-pill) {
+  color: #0284C7 !important;
+  text-shadow: none !important;
+}
+
+/* Code Blocks — Clean Light-Slate Frosted Glass with Vivid Dark Syntax */
+[data-markdown-root] div.rounded-xl.border:has(.code-block),
+[data-markdown-root] .rounded-xl.bg-muted.border,
+[data-markdown-root] pre {
+  background-color: rgba(248, 250, 252, 0.94) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-markdown-root] div.rounded-xl.border:has(.code-block) > :first-child,
+[data-markdown-root] .rounded-xl.bg-muted.border > :first-child {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10) !important;
+  color: #334155 !important;
+  text-shadow: none !important;
+}
+
+[data-markdown-root] .code-block,
+[data-markdown-root] .code-block .code-line,
+[data-markdown-root] .code-block .line-content,
+[data-markdown-root] pre code {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-markdown-root] .code-block .line-content span,
+[data-markdown-root] pre code span {
+  filter: brightness(0.55) contrast(1.45) saturate(1.3);
+  text-shadow: none !important;
+}
+
+/* Inline Code Spans */
+[data-markdown-root] code:not(pre > code):not(.code-block code) {
+  background-color: rgba(226, 232, 240, 0.88) !important;
+  color: #0369A1 !important;
+  border: 1px solid rgba(3, 105, 161, 0.22) !important;
+  padding: 1px 6px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* Inline File / Resource Pills */
+.inline-pill {
+  background-color: rgba(224, 242, 254, 0.92) !important;
+  color: #0369A1 !important;
+  border: 1px solid rgba(2, 132, 199, 0.28) !important;
+  padding: 1px 7px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+
+.inline-pill * {
+  color: #0369A1 !important;
+  text-shadow: none !important;
+}
+
+/* Cards, Artifacts, Exposed Canvas Pills/Metadata, and Remove 48px Bottom Fade Strip */
+[data-testid="conversation-view"] {
+  --background: transparent !important;
+  --color-background: transparent !important;
+}
+
+/* Frosted glass pill for "Worked for ...", tool groups, progress updates */
+[data-testid="conversation-view"] :is(
+  [data-testid="worked-for-collapsible"],
+  [data-testid="tool-group-collapsible"],
+  [data-testid="progress-updates-collapsible"]
+) {
+  background-color: var(--agy-pill-bg, rgba(255, 255, 255, 0.84)) !important;
+  backdrop-filter: blur(12px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.3) !important;
+  border: 1px solid var(--agy-pill-border, rgba(15, 23, 42, 0.14)) !important;
+  border-radius: 9999px !important;
+  padding: 3px 12px !important;
+  width: fit-content !important;
+  min-height: 28px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.14) !important;
+  color: var(--agy-canvas-fg, #0F172A) !important;
+  text-shadow: var(--agy-canvas-shadow, none) !important;
+}
+
+[data-testid="conversation-view"] :is(
+  [data-testid="worked-for-collapsible"],
+  [data-testid="tool-group-collapsible"],
+  [data-testid="progress-updates-collapsible"]
+) :is(span, svg, div) {
+  color: var(--agy-canvas-fg, #0F172A) !important;
+  text-shadow: var(--agy-canvas-shadow, none) !important;
+}
+
+/* Adaptive crisp text/icons for bare canvas metadata (timestamps, step items, copy/rating footer) */
+[data-testid="conversation-view"] :is(
+  [data-testid="transcript-line-timestamp"],
+  [data-testid*="step"],
+  button[aria-label*="Copy"],
+  button[aria-label*="Good"],
+  button[aria-label*="Bad"],
+  .text-muted-foreground,
+  .text-secondary-foreground
+):not(.surface-composer *):not([data-markdown-root] *):not(.agy-user-bubble *):not(.agy-card *):not(.artifact-card *):not(.bg-foreground):not(.bg-primary),
+[data-testid="conversation-view"] :is(
+  [data-testid="transcript-line-timestamp"],
+  [data-testid*="step"],
+  button[aria-label*="Copy"],
+  button[aria-label*="Good"],
+  button[aria-label*="Bad"]
+):not(.surface-composer *):not([data-markdown-root] *):not(.agy-user-bubble *):not(.agy-card *):not(.artifact-card *):not(.bg-foreground):not(.bg-primary) :is(span, svg) {
+  color: var(--agy-canvas-fg, #0F172A) !important;
+  text-shadow: var(--agy-canvas-shadow, 0 1px 6px rgba(0, 0, 0, 0.92)) !important;
+  opacity: 1 !important;
+}
+
+[data-testid="conversation-view"] .pointer-events-none[style*="linear-gradient"],
+[data-main-content-body] .pointer-events-none[style*="linear-gradient"],
+div.absolute.bottom-0.z-10.pointer-events-none {
+  display: none !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.agy-card,
+.artifact-card {
+  background-color: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0F172A !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Side panels, terminal, modals, and dropdowns */
+.agy-inset-shell [data-side-panel-body],
+[data-testid="bottom-terminal-panel"] {
+  background-color: rgba(255, 255, 255, 0.84) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0F172A !important;
+}
+
+body[data-agy-theme] .surface-glass,
+body[data-agy-theme] .agy-fastpick.surface-glass,
+body[data-agy-theme] .quick-input-widget.surface-glass,
+body[data-agy-theme] .agy-dialog,
+[role="menu"],
+[role="listbox"],
+[data-radix-popper-content-wrapper] > div {
+  background-color: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(20px) saturate(1.4) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0F172A !important;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12) !important;
+}
+
+[role="menu"] *,
+[role="listbox"] *,
+body[data-agy-theme] .agy-dialog * {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}

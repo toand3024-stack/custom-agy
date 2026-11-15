@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "background_image": "backgrounds/pasted file.png",
+  "opacity": 1.0,
+  "brightness": 1.0,
+  "contrast": 1.02,
+  "blur_px": 3.5,
+  "sidebar_opacity": 0.62,
+  "composer_opacity": 0.88,
+  "detected_tone": "dark",
+  "detected_luminance": 107.6
+}

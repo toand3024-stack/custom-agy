@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Antigravity Custom Background
+Comment=Đổi hình nền và tinh chỉnh kính mờ cho Antigravity (CLI + GUI)
+Exec=/home/toandinh/Documents/antigravity-custom-bg/set-bg.sh --gui
+Icon=preferences-desktop-wallpaper
+Terminal=false
+Categories=Utility;Settings;DesktopSettings;
+Keywords=antigravity;wallpaper;background;theme;glassmorphism;
