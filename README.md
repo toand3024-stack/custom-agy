@@ -116,13 +116,6 @@ antigravity-bg --status
 antigravity-bg --restore
 ```
 
-## Đưa lên GitHub
-
-```bash
-git remote add origin https://github.com/<username>/antigravity-custom-bg.git
-git branch -M main
-git push -u origin main
-```
 
 Khi sang máy mới hoặc cài lại hệ thống, chỉ cần clone repo về và chạy:
 
